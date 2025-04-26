@@ -1,20 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="style.css">
+    <title>G1 - Layout Semelhante</title>
+    <style>
+        /* Aqui você adicionaria os estilos CSS para se parecer com o G1 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .header {
+            background-color: #c00; /* Cor vermelha semelhante ao topo do G1 */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header-right {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .banner {
+            background-color: #eee;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .main-left {
+            flex: 2;
+            margin-right: 20px;
+        }
+
+        .main-right {
+            flex: 1;
+        }
+
+        .news-item {
+            background-color: white;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .news-item h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .news-item p {
+            color: #666;
+        }
+
+        .vertical-menu {
+            background-color: #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .vertical-menu h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .vertical-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .vertical-menu ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .vertical-menu ul li:last-child {
+            border-bottom: none;
+        }
+
+        .vertical-menu ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>To-Do List</h1>
-        <div class="input-container">
-            <input type="text" id="task-input" placeholder="Add a new task..." />
-            <button id="add-task-btn">Add</button>
+    <div class="header">
+        <div class="header-left">
+            <div class="menu-icon">&#9776;</div>
+            <div class="logo">g1</div>
         </div>
-        <ul id="task-list"></ul>
+        <div class="header-right">
+            <div class="search-icon">&#128269;</div>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <div class="banner">
+        <img src="https://via.placeholder.com/1200x100" alt="Banner Publicitário">
+    </div>
+
+    <div class="main-content">
+        <div class="main-left">
+            <div class="news-item">
+                <h2>Corpo de Francisco chega à basílica Santa Maria para sepultamento</h2>
+                <p>Conheça a Basílica de Santa Maria Maggiore; FOTOS</p>
+                <p>Missa reúne 250 mil pessoas na Praça de São Pedro</p>
+            </div>
+            <div class="news-item">
+                <h2>Leia a íntegra da homilia: cardeal cita pedido do papa para 'construir pontes e não muros'</h2>
+                <p>Há 1 hora - Em Mundo</p>
+            </div>
+            </div>
+        <div class="main-right">
+            <div class="vertical-menu">
+                <h3>Mais Lidas</h3>
+                <ul>
+                    <li><a href="#">Notícia 1</a></li>
+                    <li><a href="#">Notícia 2</a></li>
+                    <li><a href="#">Notícia 3</a></li>
+                    <li><a href="#">Notícia 4</a></li>
+                </ul>
+            </div>
+            <div class="vertical-menu">
+                <h3>Vídeos</h3>
+                <ul>
+                    <li><a href="#">Vídeo 1</a></li>
+                    <li><a href="#">Vídeo 2</a></li>
+                </ul>
+            </div>
+            </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2023 G1 - Todos os direitos reservados.</p>
+    </div>
+
+    <div style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); background-color: #c00; color: white; padding: 10px; border-radius: 5px; cursor: pointer;">
+        Pesquisa
+    </div>
 </body>
 </html>
