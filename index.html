@@ -4,114 +4,165 @@
 
 <!-- Início da seção <head>, onde configuramos o título e estilos -->
 <head>
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
-    <title>Página de Notícias</title> <!-- Título da página -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <title>Página de Notícias</title> <!-- Título da página -->
 
-    <style>
-        /* Reset e configurações globais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <style>
+        /* Reset e configurações globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* Estiliza o corpo da página */
-        body {
-            font-family: Arial, sans-serif; /* Define a fonte */
-            background-color: #f9f9f9; /* Cor de fundo suave */
-            padding: 34px; /* Espaçamento em torno da página */
-        }
+        /* Estiliza o corpo da página */
+        body {
+            font-family: Arial, sans-serif; /* Define a fonte */
+            background-color: #f9f9f9; /* Cor de fundo suave */
+            padding: 34px; /* Espaçamento em torno da página */
+        }
 
-        /* Container principal que agrupa os cartões de notícia */
-        .news-container {
-            display: flex; /* Ativa o modelo flexbox */
-            flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-            justify-content: center; /* Centraliza os cartões */
-            gap: 74px; /* Espaço entre os cartões */
-        }
+        /* Container principal que agrupa os cartões de notícia */
+        .news-container {
+            display: flex; /* Ativa o modelo flexbox */
+            flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+            justify-content: center; /* Centraliza os cartões */
+            gap: 74px; /* Espaço entre os cartões */
+        }
 
-        /* Estilização de cada cartão de notícia individual */
-        .card {
-            position: relative; /* Permite posicionar elementos filhos de forma absoluta */
-            width: 300px; /* Largura fixa do cartão */
-            height: 175px; /* Altura fixa do cartão (proporção 5:4: 300x175) */
-            overflow: hidden; /* Esconde o que ultrapassar o cartão */
-            border-radius: 15px; /* Cantos arredondados */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
-            transition: transform 0.3s ease-in-out; /* Suaviza o efeito de hover */
-        }
+        /* Estilização de cada cartão de notícia individual */
+        .card {
+            position: relative; /* Permite posicionar elementos filhos de forma absoluta */
+            width: 300px; /* Largura fixa do cartão */
+            height: 225px; /* Altura fixa do cartão (proporção 4:3: 300x225) */
+            overflow: hidden; /* Esconde o que ultrapassar o cartão */
+            border-radius: 15px; /* Cantos arredondados */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
+            transition: transform 0.3s ease-in-out; /* Suaviza o efeito de hover */
+        }
 
-        /* Estilo da imagem dentro do cartão */
-        .card img {
-            width: 100%; /* Ocupa toda a largura do cartão */
-            height: 100%; /* Ocupa toda a altura do cartão */
-            object-fit: cover; /* Cobre o espaço mantendo proporção */
-            transition: transform 0.3s ease-in-out; /* Suaviza o efeito de zoom no hover */
-        }
+        /* Estilo da imagem dentro do cartão */
+        .card img {
+            width: 100%; /* Ocupa toda a largura do cartão */
+            height: 100%; /* Ocupa toda a altura do cartão */
+            object-fit: cover; /* Cobre o espaço mantendo proporção */
+            transition: transform 0.3s ease-in-out; /* Suaviza o efeito de zoom no hover */
+        }
 
-        /* Efeito de zoom ao passar o mouse sobre o cartão */
-        .card:hover img {
-            transform: scale(1.05); /* Aumenta levemente a imagem */
-        }
+        /* Efeito de zoom ao passar o mouse sobre o cartão */
+        .card:hover img {
+            transform: scale(1.05); /* Aumenta levemente a imagem */
+        }
 
-        /* Título sobreposto na parte inferior da imagem */
-        .card .title {
-            position: absolute; /* Posiciona o texto sobre a imagem */
-            bottom: 0; /* Alinha na parte inferior */
-            left: 0;
-            width: 100%; /* Ocupa toda a largura do cartão */
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); /* Gradiente escuro para cima */
-            color: white; /* Cor do texto */
-            padding: 10px; /* Espaço interno */
-            font-size: 14px; /* Tamanho da fonte */
-            font-weight: bold; /* Negrito */
-            text-align: center; /* Centraliza o texto */
-        }
-    </style>
+        /* Título sobreposto na parte inferior da imagem */
+        .card .title {
+            position: absolute; /* Posiciona o texto sobre a imagem */
+            bottom: 0; /* Alinha na parte inferior */
+            left: 0;
+            width: 100%; /* Ocupa toda a largura do cartão */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); /* Gradiente escuro para cima */
+            color: white; /* Cor do texto */
+            padding: 10px; /* Espaço interno */
+            font-size: 14px; /* Tamanho da fonte */
+            font-weight: bold; /* Negrito */
+            text-align: center; /* Centraliza o texto */
+        }
+    </style>
 </head>
 
 <!-- Início do corpo da página -->
 <body>
-    <!-- Container que envolve todos os cartões de notícias -->
-    <div class="news-container">
+    <!-- Container que envolve todos os cartões de notícias -->
+    <div class="news-container">
 
-        <!-- Cartão da Notícia 1 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x300" alt="Notícia 1"> <!-- Imagem da notícia -->
-            <div class="title">Título da Notícia 1</div> <!-- Título sobreposto -->
-        </div>
+        <!-- Cartão da Notícia 1 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Notícia 1"> <!-- Imagem da notícia -->
+            <div class="title">Título da Notícia 1</div> <!-- Título sobreposto -->
+        </div>
 
-        <!-- Cartão da Notícia 2 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x300" alt="Notícia 2">
-            <div class="title">Título da Notícia 2</div>
-        </div>
+        <!-- Cartão da Notícia 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Notícia 2">
+            <div class="title">Título da Notícia 2</div>
+        </div>
 
-        <!-- Cartão da Notícia 3 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x300" alt="Notícia 3">
-            <div class="title">Título da Notícia 3</div>
-        </div>
+        <!-- Cartão da Notícia 3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Notícia 3">
+            <div class="title">Título da Notícia 3</div>
+        </div>
 
-        <!-- Cartão da Notícia 4 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x300" alt="Notícia 4">
-            <div class="title">Título da Notícia 4</div>
-        </div>
+        <!-- Cartão da Notícia 4 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Notícia 4">
+            <div class="title">Título da Notícia 4</div>
+        </div>
 
- <!-- Cartão da Notícia 5 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x300" alt="Notícia 4">
-            <div class="title">Título da Notícia 4</div>
-        </div>
+        <!-- Cartão da Notícia 5 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Notícia 5">
+            <div class="title">Título da Notícia 5</div>
+        </div>
 
- <!-- Cartão da Notícia 6 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x300" alt="Notícia 4">
-            <div class="title">Título da Notícia 4</div>
-        </div>
+        <!-- Cartão da Notícia 6 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Notícia 6">
+            <div class="title">Título da Notícia 6</div>
+        </div>
 
-    </div>
+    </div>
+
+    <!-- Espaço antes do rodapé -->
+    <div style="height: 50px;"></div>
+
+    <!-- Início do Rodapé -->
+    <footer style="background-color: #000; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+        <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
+
+            <!-- Logotipo -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <a href="https://www.sites.google.com/al.educacao.sp.gov.br/vozesdaescola" target="_blank">
+                    <img src="https://i.postimg.cc/yd5c8pGk/V-20250428-072056-0000.png/350x90?text=LOGO" alt="Logo" style="width: 220px;">
+                </a>
+            </div>
+
+            <!-- Endereço -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <h3 style="margin-bottom: 10px;">Endereço</h3>
+                <p style="margin: 0;">
+                    Rua São Valentim, 330<br>
+                    Jardim Redentor<br>
+                    Bauru - SP<br>
+                    CEP 17032-288
+                </p>
+            </div>
+
+            <!-- Contatos -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <h3 style="margin-bottom: 10px;">Contato</h3>
+                <p style="margin: 0;">
+                    WhatsApp: (14) 98120-5044<br>
+                    E-mail: vozesdaescola.vera@gmail.com
+                </p>
+            </div>
+        </div>
+
+        <!-- Linha divisória -->
+        <hr style="border: 0; border-top: 1px solid #444; margin: 20px 0;">
+
+        <!-- Linha final com copyright e crédito -->
+        <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+            <!-- Copyright -->
+            <div style="color: #aaa; font-size: 14px;">
+                &copy; 2025 Vozes da Escola. Todos os direitos reservados.
+            </div>
+            <!-- Desenvolvido por -->
+            <div style="color: #aaa; font-size: 14px;">
+                Desenvolvido por <a href="https://wa.me/5514981205044" target="_blank" style="color: #fff; text-decoration: underline;">Reuel de Jesus Foizer</a>.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
