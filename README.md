@@ -12,7 +12,7 @@ Bem-vindo ao **Vozes da Escola**, o site oficial do jornal escolar! Este projeto
 ## Como acessar o site
 
 O site está hospedado no GitHub Pages e pode ser acessado no seguinte link:  
-[https://veracampagnani.github.io/vozes-da-escola](https://vozesdaescola.github.io/vozes-da-escola)
+[https://veracampagnani.github.io/vozes-da-escola](https://veracampagnai.github.io/vozes-da-escola)
 
 ## Tecnologias utilizadas
 
